@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Hexagon<Content:View>: View {
+    var size: CGFloat = 350
     var moment: Moment? = nil
     @ViewBuilder var content: () -> Content
 
@@ -20,7 +21,9 @@ struct Hexagon<Content:View>: View {
             }
 
             content()
+                .frame(width: size, height: size)
         }
+        .frame(width: size, height: size)
     }
 }
 
