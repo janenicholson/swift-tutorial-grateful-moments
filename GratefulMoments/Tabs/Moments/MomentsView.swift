@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MomentsView: View {
+    @Query(sort: \Moment.timestamp)
+    private var moments: [Moment]
+
     var body: some View {
         Text("Hello, World!")
     }
@@ -15,4 +19,5 @@ struct MomentsView: View {
 
 #Preview {
     MomentsView()
+        .sampleDataContainer()
 }
