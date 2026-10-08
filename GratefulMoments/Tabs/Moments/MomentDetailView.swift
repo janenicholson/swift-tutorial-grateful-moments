@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MomentDetailView: View {
     var moment: Moment
+    @State private var showConfirmation = false
 
     var body: some View {
         ScrollView {
@@ -18,10 +19,18 @@ struct MomentDetailView: View {
         .toolbar {
             ToolbarItem(placement: .destructiveAction) {
                 Button {
-                    
+                    showConfirmation = true
                 }
                 label: {
                     Image(systemName: "trash")
+                }
+                .confirmationDialog("Delete moment", isPresented: $showConfirmation) {
+                    Button("Delete Moment", role: .destructive) {
+                        
+                    }
+                }
+                message: {
+                    Text("The moment will be permanently deleted. Earned badges won't be removed.")
                 }
             }
         }
