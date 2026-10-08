@@ -15,6 +15,16 @@ struct MomentDetailView: View {
             contentStack
         }
         .navigationTitle(moment.title)
+        .toolbar {
+            ToolbarItem(placement: .destructiveAction) {
+                Button {
+                    
+                }
+                label: {
+                    Image(systemName: "trash")
+                }
+            }
+        }
     }
 
     private var contentStack: some View {
