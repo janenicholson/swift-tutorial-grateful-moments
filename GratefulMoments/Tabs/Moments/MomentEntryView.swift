@@ -24,6 +24,13 @@ struct MomentEntryView: View {
             }
             .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Grateful For")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add", systemImage: "checkmark") {
+
+                    }
+                }
+            }
         }
     }
 
