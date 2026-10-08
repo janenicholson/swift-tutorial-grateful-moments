@@ -13,9 +13,12 @@ struct MomentsView: View {
     private var moments: [Moment]
 
     var body: some View {
-        ScrollView {
-            pathItems
-                .frame(maxWidth: .infinity)
+        NavigationStack {
+            ScrollView {
+                pathItems
+                    .frame(maxWidth: .infinity)
+            }
+            .navigationTitle("Grateful Moments")
         }
     }
 
