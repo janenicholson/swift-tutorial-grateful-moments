@@ -18,6 +18,16 @@ struct MomentsView: View {
                 pathItems
                     .frame(maxWidth: .infinity)
             }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        
+                    }
+                    label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
             .navigationTitle("Grateful Moments")
         }
     }
