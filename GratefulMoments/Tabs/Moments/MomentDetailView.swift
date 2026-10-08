@@ -12,6 +12,7 @@ struct MomentDetailView: View {
     var moment: Moment
     @State private var showConfirmation = false
 
+    @Environment(\.dismiss) private var dismiss
     @Environment(DataContainer.self) private var dataContainer
 
     var body: some View {
@@ -31,6 +32,7 @@ struct MomentDetailView: View {
                     Button("Delete Moment", role: .destructive) {
                         dataContainer.context.delete(moment)
                         try? dataContainer.context.save()
+                        dismiss()
                     }
                 }
                 message: {
