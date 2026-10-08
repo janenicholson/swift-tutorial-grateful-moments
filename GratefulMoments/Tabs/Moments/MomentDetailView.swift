@@ -11,7 +11,9 @@ struct MomentDetailView: View {
     var moment: Moment
 
     var body: some View {
-        contentStack
+        ScrollView {
+            contentStack
+        }
     }
 
     private var contentStack: some View {
@@ -20,6 +22,8 @@ struct MomentDetailView: View {
             Text("Notes")
             Text("Image")
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
     }
 }
 
