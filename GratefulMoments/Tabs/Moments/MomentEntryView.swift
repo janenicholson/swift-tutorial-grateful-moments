@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MomentEntryView: View {
+    @State private var title = ""
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -21,7 +23,12 @@ struct MomentEntryView: View {
 
     var contentStack: some View {
         VStack(alignment: .leading) {
-            Text("Title")
+            TextField(text: $title) {
+                Text("Title (Required)")
+            }
+            .font(.title.bold())
+            .padding(.top, 48)
+            Divider()
 
             Text("Note")
         }
