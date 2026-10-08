@@ -12,6 +12,7 @@ import PhotosUI
 struct MomentEntryView: View {
     @State private var title = ""
     @State private var note = ""
+    @State private var imageData: Data?
     @State private var newImage: PhotosPickerItem?
 
     var body: some View {
@@ -35,6 +36,9 @@ struct MomentEntryView: View {
         }
         .onChange(of: newImage) {
             guard let newImage else { return }
+            Task {
+                imageData = try await newImage.loadTransferable(type: Data.self)
+            }
         }
     }
 
