@@ -24,10 +24,17 @@ class DataContainer {
         do {
             modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
 
+            loadSampleMoments()
             try context.save()
         }
         catch {
             fatalError("Could not create ModelContainer: \(error)")
+        }
+    }
+
+    private func loadSampleMoments() {
+        for moment in Moment.sampleData {
+            context.insert(moment)
         }
     }
 }
