@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct MomentsView: View {
+    @State private var showCreateMoment = false
     @Query(sort: \Moment.timestamp)
     private var moments: [Moment]
 
@@ -21,10 +22,13 @@ struct MomentsView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        
+                        showCreateMoment = true
                     }
                     label: {
                         Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $showCreateMoment) {
+                        MomentEntryView()
                     }
                 }
             }
