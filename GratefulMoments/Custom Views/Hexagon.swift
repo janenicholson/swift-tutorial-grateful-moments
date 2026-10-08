@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct Hexagon: View {
+struct Hexagon<Content:View>: View {
+    @ViewBuilder var content: () -> Content
+
     var body: some View {
-        Text("Hello, World!")
+        content()
     }
 }
 
 #Preview {
-    Hexagon()
+    Hexagon() {
+        Text("Hello, World!")
+    }
 }
