@@ -9,7 +9,9 @@ import SwiftUI
 
 struct AchievementsView: View {
     var body: some View {
-        contentStack
+        ScrollView {
+            contentStack
+        }
     }
 
     private var contentStack: some View {
@@ -18,6 +20,7 @@ struct AchievementsView: View {
             Text("Locked Badges")
         }
         .padding()
+        .frame(maxWidth: .infinity)
     }
 }
 
