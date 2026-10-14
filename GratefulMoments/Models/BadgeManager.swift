@@ -20,5 +20,10 @@ class BadgeManager {
         var fetchDescriptor = FetchDescriptor<Badge>()
         fetchDescriptor.fetchLimit = 1
         let existingBadges = try context.fetch(fetchDescriptor)
+        if (existingBadges.isEmpty) {
+            for details in BadgeDetails.allCases {
+                context.insert(Badge(details: details))
+            }
+        }
     }
 }
