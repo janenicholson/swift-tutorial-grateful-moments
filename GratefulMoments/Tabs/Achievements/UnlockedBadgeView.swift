@@ -11,14 +11,15 @@ struct UnlockedBadgeView: View {
     var badge: Badge
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
             Image(badge.details.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 70)
+                .frame(maxWidth: .infinity, alignment: .center)
             Text(badge.details.title)
                 .font(.headline.bold())
-            Text(badge.details.congratulatoryMessage)
+            Text(badge.details.requirements)
                 .font(.caption2.bold())
             Spacer()
             if let timestamp = badge.timestamp {
@@ -28,7 +29,7 @@ struct UnlockedBadgeView: View {
         }
         .padding()
         .frame(width: 210, height: 225)
-        .multilineTextAlignment(.center)
+        .multilineTextAlignment(.leading)
         .foregroundStyle(.white)
         .background(badge.details.color.opacity(0.8))
         .clipShape(RoundedRectangle(cornerRadius: 16.0))
