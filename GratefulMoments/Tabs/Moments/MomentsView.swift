@@ -46,6 +46,7 @@ struct MomentsView: View {
             }
             .defaultScrollAnchor(.bottom, for: .initialOffset)
             .defaultScrollAnchor(.bottom, for: .sizeChanges)
+            .defaultScrollAnchor(.top, for: .alignment)
             .navigationTitle("Grateful Moments")
         }
     }
@@ -81,4 +82,5 @@ struct MomentsView: View {
 #Preview("No moments") {
     MomentsView()
         .modelContainer(for: [Moment.self])
+        .environment(DataContainer())
 }
