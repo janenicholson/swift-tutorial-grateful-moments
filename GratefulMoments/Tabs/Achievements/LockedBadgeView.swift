@@ -16,7 +16,13 @@ struct LockedBadgeView: View {
                 .resizable()
                 .frame(width: 70, height: 70)
                 .padding(.trailing, 16)
-            Text(badge.details.title)
+            VStack {
+                Text(badge.details.title)
+                    .font(.subheadline.bold())
+                Text(badge.details.requirements)
+                    .font(.caption)
+            }
+            Spacer()
         }
         .padding()
         .background(Color.secondary.opacity(0.2))
