@@ -25,6 +25,11 @@ struct StreakCalculator {
             .map { calendar.dateComponents([.day], from: $0, to: endOfToday) }
             .compactMap { $0.day }
 
+        var streak = 0
+        for daysAgo in daysAgoArray {
+            
+        }
+
         return 0
     }
 }
