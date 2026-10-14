@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct MomentHexagonView: View {
+    var moment: Moment
+    @State var layout: HexagonLayout = .standard
+
     var body: some View {
-        Text("Hello, World!")
+        Hexagon(layout: layout, moment: moment) {
+            Text("Hello, World!")
+        }
     }
 }
 
 #Preview {
-    MomentHexagonView()
+    ScrollView {
+        MomentHexagonView(moment: Moment.imageSample)
+        MomentHexagonView(moment: Moment.imageSample, layout: .large)
+        MomentHexagonView(moment: Moment.sample)
+        MomentHexagonView(moment: Moment.sample, layout: .large)
+    }
 }
