@@ -1,15 +1,15 @@
 //
-//  GratefulMomentsTests.swift
-//  GratefulMomentsTests
+//  StreakCalculatorTests.swift
+//  StreakCalculatorTests
 //
 //  Created by Jane Nicholson on 15/10/2026.
 //
 
 import Testing
 
-struct GratefulMomentsTests {
+struct StreakCalculatorTests {
 
-    @Test func example() async throws {
+    @Test func testCalculations() {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
 
