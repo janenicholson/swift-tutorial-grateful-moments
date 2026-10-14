@@ -27,9 +27,11 @@ struct StreakCalculator {
 
         var streak = 0
         for daysAgo in daysAgoArray {
-            
+            if daysAgo == streak {
+                streak += 1
+            }
         }
 
-        return 0
+        return streak
     }
 }
