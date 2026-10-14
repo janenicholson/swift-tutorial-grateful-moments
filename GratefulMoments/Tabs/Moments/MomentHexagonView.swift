@@ -23,6 +23,10 @@ struct MomentHexagonView: View {
                 .font(layout.titleFont)
         }
     }
+
+    private var showImage: Bool {
+        moment.image != nil
+    }
 }
 
 #Preview {
