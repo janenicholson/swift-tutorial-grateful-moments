@@ -13,7 +13,14 @@ struct MomentHexagonView: View {
 
     var body: some View {
         Hexagon(layout: layout, moment: moment) {
-            Text("Hello, World!")
+            contentStack()
+        }
+    }
+
+    private func contentStack() -> some View {
+        VStack(alignment: .leading) {
+            Text(moment.title)
+                .font(layout.titleFont)
         }
     }
 }
