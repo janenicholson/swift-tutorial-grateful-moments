@@ -62,6 +62,11 @@ struct MomentsView: View {
                         .offset(x: sin(Double(index) * .pi / 2) * Self.offsetAmount)
                 }
             }
+            .scrollTransition { content, phase in
+                content
+                    .opacity(phase.isIdentity ? 1 : 0)
+                    .scaleEffect(phase.isIdentity ? 1 : 0.8)
+            }
         }
     }
 }
