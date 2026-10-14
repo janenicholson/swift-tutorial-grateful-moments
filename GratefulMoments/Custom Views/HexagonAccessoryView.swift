@@ -70,6 +70,6 @@ struct HexagonAccessoryView: View {
 }
 
 #Preview("Multiple badges") {
-    MomentHexagonView(moment: .imageSample, layout: .large)
+    MomentHexagonView(moment: .imageSample, layout: .standard)
         .sampleDataContainer()
 }
