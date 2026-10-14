@@ -31,7 +31,7 @@ struct AchievementsView: View {
             }
             header("Locked Badges")
             ForEach(sortedLockedBadges) { badge in
-                Text(badge.details.title)
+                LockedBadgeView(badge: badge)
             }
         }
         .padding()
