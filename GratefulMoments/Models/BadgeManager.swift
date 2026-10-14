@@ -33,6 +33,11 @@ class BadgeManager {
                 continue
             }
         }
+
+        for badge in newlyUnlocked {
+            badge.moment = newMoment
+            badge.timestamp = newMoment.timestamp
+        }
     }
 
     func loadBadgesIfNeeded() throws {
