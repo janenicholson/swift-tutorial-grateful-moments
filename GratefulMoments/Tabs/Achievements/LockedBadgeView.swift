@@ -11,7 +11,12 @@ struct LockedBadgeView: View {
     var badge: Badge
 
     var body: some View {
-        Text(badge.details.title)
+        HStack {
+            Text(badge.details.title)
+        }
+        .padding()
+        .background(Color.secondary.opacity(0.2))
+        .clipShape(RoundedRectangle(cornerRadius: 16.0))
     }
 }
 
