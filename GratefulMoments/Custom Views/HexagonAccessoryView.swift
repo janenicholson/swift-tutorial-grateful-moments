@@ -14,6 +14,10 @@ struct HexagonAccessoryView: View {
     var body: some View {
         Text("Hello, World!")
     }
+
+    private var size: CGFloat {
+        hexagonLayout.size / 5
+    }
 }
 
 #Preview {
