@@ -74,6 +74,11 @@ struct MomentHexagonView: View {
     }
 }
 
+#Preview("English language, region Great Britain") {
+    MomentHexagonView(moment: Moment.imageSample)
+        .environment(\.locale, Locale(identifier: "en_GB"))
+}
+
 #Preview("Spanish language") {
     MomentHexagonView(moment: Moment.imageSample)
         .environment(\.locale, Locale(identifier: "es"))
