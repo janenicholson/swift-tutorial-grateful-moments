@@ -28,6 +28,8 @@ struct StreakCalculator {
         var streak = 0
         for daysAgo in daysAgoArray {
             if daysAgo == streak {
+                continue
+            } else if daysAgo == streak + 1 {
                 streak += 1
             }
         }
