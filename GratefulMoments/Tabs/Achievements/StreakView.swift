@@ -12,7 +12,12 @@ struct StreakView: View {
 
     var body: some View {
         Hexagon(borderColor: .secondary) {
-            
+            VStack(spacing: 0) {
+                Text("\(numberOfDays)")
+                    .font(.system(size: 70))
+                Text("Days")
+            }
+            .font(.callout)
         }
     }
 }
