@@ -13,6 +13,8 @@ struct MomentsView: View {
     @Query(sort: \Moment.timestamp)
     private var moments: [Moment]
 
+    static let offsetAmount: CGFloat = 70.0
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -47,7 +49,7 @@ struct MomentsView: View {
     }
 
     private var pathItems: some View {
-        ForEach(moments) { moment in
+        ForEach(moments.enumerated(), id: \.0) { index, moment in
             NavigationLink {
                 MomentDetailView(moment: moment)
             }
@@ -57,6 +59,7 @@ struct MomentsView: View {
                 }
                 else {
                     MomentHexagonView(moment: moment)
+                        .offset(x: sin(Double(index) * .pi / 2) * Self.offsetAmount)
                 }
             }
         }
